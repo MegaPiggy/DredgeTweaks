@@ -14,6 +14,9 @@ env:
     PROJ_USERNAME: megapiggy
     PROJ_NAME: tweaks
 
+permissions:
+  contents: write
+
 jobs:
     pre_job:
         name: Check For Other Releases
