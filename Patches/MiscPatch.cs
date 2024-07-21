@@ -17,16 +17,6 @@ internal static class MiscPatch
         }
     }
 
-    [HarmonyPatch(typeof(SplashController), "BeginSplashAnimation")]
-	public static class SplashController_BeginSplashAnimation_Patch
-    {
-        public static bool Prefix(SplashController __instance)
-        {
-            __instance.OnSplashComplete();
-            return false;
-        }
-    }
-
     [HarmonyPatch(typeof(VibrationManager), "Vibrate")]
 	public static class VibrationManager_Vibrate_Patch
     {
