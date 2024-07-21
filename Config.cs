@@ -322,4 +322,10 @@ public class Config
 	/// </summary>
 	[DefaultValue("vanilla")]
 	public Spots dredgeSpots = Spots.Vanilla;
+
+	/// <summary>
+	/// Make it so you can activate haste ability only when moving.
+	/// </summary>
+	[DefaultValue(true)]
+	public bool onlyActivateBoostWhenMoving = true;
 }

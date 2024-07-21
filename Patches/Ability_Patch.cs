@@ -32,7 +32,7 @@ internal static class Ability_Patch
         public static bool ActivatePrefix(BoostAbility __instance)
         {
             __instance.hasteHeatLoss = hasteHeatLossOriginal * Main.Config.boostCooldownMult;
-            return GameManager.Instance.Player.Controller.IsMoving;
+            return Main.Config.onlyActivateBoostWhenMoving && GameManager.Instance.Player.Controller.IsMoving;
         }
 
         [HarmonyPostfix]

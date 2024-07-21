@@ -163,6 +163,9 @@
 	// Abilities have no cooldown timer
 	// Default: false
 	"noAbilityCooldown": false,
+	// Make it so you can activate haste ability only when moving
+	// Default: true
+	"onlyActivateBoostWhenMoving": true,
 
 
 	// SANITY
