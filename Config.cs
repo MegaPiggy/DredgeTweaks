@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Tweaks;
 
+// TODO: change UnityEngine to System.ComponentModel.Annotations
 [JsonObject]
 public class Config
 {
