@@ -1,0 +1,8 @@
+{
+	"Name": "Tweaks",
+	"ModGUID": "megapiggy.tweaks",
+	"Version": "1.0.0",
+	"ModAssembly": "Tweaks.dll",
+	"MinWinchVersion": "0.4.0",
+	"Entrypoint": "Tweaks.Main/Initialize"
+}
