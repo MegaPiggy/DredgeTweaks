@@ -1,5 +1,7 @@
 using HarmonyLib;
+using System.Linq;
 using System.Reflection;
+using UnityEngine;
 using Winch.Core;
 
 namespace Tweaks
@@ -38,6 +40,17 @@ namespace Tweaks
 		private static void OnGameStarted()
 		{
 			WinchCore.Log.Info("OnGameStarted");
+			if (Config.buyLockedLights)
+			{
+				foreach (var lightShopData in Resources.FindObjectsOfTypeAll<ShopData>().Where(shopData => shopData.name.EndsWith("_Lights")))
+				{
+					foreach (var shopItem in lightShopData.phaseLinkedShopData.SelectMany(phaseLinked => phaseLinked.itemData))
+					{
+						lightShopData.alwaysInStock.Add(shopItem);
+					}
+					lightShopData.phaseLinkedShopData.Clear();
+				}
+			}
 		}
 
 		private static void OnGameEnded()

@@ -169,6 +169,9 @@
 	// Make it so you can sell Peculiar Engine, Sampling Device, pieces of treasure map
 	// Default: true
 	"sellExtraItems": true,
+	// Make it so you can buy the Halogen, Tungsten, Incandescent lights without chapter progression
+	// Default: true
+	"buyLockedLights": true,
 
 
 	// SANITY

@@ -334,4 +334,10 @@ public class Config
 	/// </summary>
 	[DefaultValue(true)]
 	public bool sellExtraItems = true;
+
+	/// <summary>
+	/// Make it so you can buy the Halogen, Tungsten, Incandescent lights without chapter progression.
+	/// </summary>
+	[DefaultValue(true)]
+	public bool buyLockedLights = true;
 }
