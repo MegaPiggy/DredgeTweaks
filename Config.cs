@@ -328,4 +328,10 @@ public class Config
 	/// </summary>
 	[DefaultValue(true)]
 	public bool onlyActivateBoostWhenMoving = true;
+
+	/// <summary>
+	/// Make it so you can sell Peculiar Engine, Sampling Device, pieces of treasure map.
+	/// </summary>
+	[DefaultValue(true)]
+	public bool sellExtraItems = true;
 }

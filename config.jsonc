@@ -166,6 +166,9 @@
 	// Make it so you can activate haste ability only when moving
 	// Default: true
 	"onlyActivateBoostWhenMoving": true,
+	// Make it so you can sell Peculiar Engine, Sampling Device, pieces of treasure map
+	// Default: true
+	"sellExtraItems": true,
 
 
 	// SANITY

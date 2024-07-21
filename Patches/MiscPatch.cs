@@ -199,32 +199,35 @@ internal static class MiscPatch
         [HarmonyPatch("CreateObject")]
         public static void CreateObjectPrefix(GridUI __instance, SpatialItemInstance entry)
         {
-            if (entry.id == "engine1")
+            if (Main.Config.sellExtraItems)
             {
-                SpatialItemData engine = entry.GetItemData<SpatialItemData>();
-                if (engine != null)
+                if (entry.id == "engine1")
                 {
-                    engine.canBeSoldByPlayer = true;
-                    engine.value = 180m;
+                    SpatialItemData engine = entry.GetItemData<SpatialItemData>();
+                    if (engine != null)
+                    {
+                        engine.canBeSoldByPlayer = true;
+                        engine.value = 180m;
+                    }
                 }
-            }
-            else if (entry.id == "rod5")
-            {
-                SpatialItemData rod = entry.GetItemData<SpatialItemData>();
-                if (rod != null)
+                else if (entry.id == "rod5")
                 {
-                    rod.canBeSoldByPlayer = true;
-                    rod.value = 300m;
+                    SpatialItemData rod = entry.GetItemData<SpatialItemData>();
+                    if (rod != null)
+                    {
+                        rod.canBeSoldByPlayer = true;
+                        rod.value = 300m;
+                    }
                 }
-            }
-            else if (entry.id == "quest-map-1" || entry.id == "quest-map-2" || entry.id == "quest-map-3")
-            {
-                SpatialItemData questMap = entry.GetItemData<SpatialItemData>();
-                if (questMap != null)
+                else if (entry.id == "quest-map-1" || entry.id == "quest-map-2" || entry.id == "quest-map-3")
                 {
-                    questMap.canBeSoldByPlayer = true;
-                    questMap.value = 30m;
-                    questMap.itemSubtype = ItemSubtype.TRINKET;
+                    SpatialItemData questMap = entry.GetItemData<SpatialItemData>();
+                    if (questMap != null)
+                    {
+                        questMap.canBeSoldByPlayer = true;
+                        questMap.value = 30m;
+                        questMap.itemSubtype = ItemSubtype.TRINKET;
+                    }
                 }
             }
         }
