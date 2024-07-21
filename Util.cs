@@ -1,11 +1,7 @@
-using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using System.Text;
-using UnityEngine;
 using Winch.Core;
 
 namespace Tweaks;
@@ -23,7 +19,7 @@ public static class Util
 	{
 		var folderpath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
-		string filepath = Path.Combine(folderpath, filename + ".json");
+		string filepath = Path.Combine(folderpath, filename + ".jsonc");
 		if (File.Exists(filepath))
 		{
 			try
@@ -39,9 +35,9 @@ public static class Util
 		{
 			try
 			{
-				var obj = default(T);
-				File.WriteAllText(filepath, JsonConvert.SerializeObject(obj, typeof(T), jsonSettings));
-				return obj;
+				T instance = (T)Activator.CreateInstance(typeof(T));
+				File.WriteAllText(filepath, JsonConvert.SerializeObject(instance, typeof(T), jsonSettings));
+				return instance;
 			}
 			catch (Exception ex)
 			{

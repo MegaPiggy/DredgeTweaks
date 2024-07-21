@@ -1,13 +1,14 @@
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json;
 using System.ComponentModel;
+using System.Runtime.Serialization;
 
 namespace Tweaks;
 
+[JsonConverter(typeof(StringEnumConverter))]
 public enum Spots
 {
-	[Description("vanilla")]
-	Vanilla,
-	[Description("never deplete")]
-	NeverDeplete,
-	[Description("never restock")]
-	NeverRestock
+	[EnumMember(Value = @"vanilla")] Vanilla,
+	[EnumMember(Value = @"neverDeplete")] NeverDeplete,
+	[EnumMember(Value = @"neverRestock")] NeverRestock
 }

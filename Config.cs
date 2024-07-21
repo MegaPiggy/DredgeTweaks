@@ -46,7 +46,7 @@ public class Config
 
 	/// <summary>
 	/// Aberration catch chance cap
-	/// Your chances to catch aberations will be capped at this.
+	/// Your chances to catch aberrations will be capped at this.
 	/// </summary>
 	[Range(0, 1)]
 	[DefaultValue(0.35f)]
@@ -213,7 +213,7 @@ public class Config
 	/// <summary>
 	/// Haste ability heat loss rate multiplier
 	/// </summary>
-	[Range(0.01f, 10)]
+	[Range(0.1f, 10)]
 	[DefaultValue(1)]
 	public float boostCooldownMult = 1;
 
@@ -222,7 +222,7 @@ public class Config
 	/// The higher the value the faster time passes when you move.
 	/// This does not affect anything else.
 	/// </summary>
-	[Range(0.01f, 10)]
+	[Range(0.1f, 10)]
 	[DefaultValue(1)]
 	public float dayLengthMult = 1;
 
@@ -256,7 +256,7 @@ public class Config
 	/// Sanity change rate multiplier
 	/// Your sanity recovery and loss rate will be multiplied by this
 	/// </summary>
-	[Range(0.01f, 10)]
+	[Range(0.1f, 10)]
 	public float sanityMultiplier = 1f;
 
 	/// <summary>
@@ -276,7 +276,7 @@ public class Config
 	/// <summary>
 	/// Crab pot durability multiplier
 	/// </summary>
-	[Range(0.01f, 10)]
+	[Range(0.1f, 10)]
 	[DefaultValue(1)]
 	public float crabPotDurabilityMultiplier = 1;
 
@@ -298,7 +298,7 @@ public class Config
 
 	/// <summary>
 	/// Min atrophy aberrations
-	/// Min number of aberations caught by atrophy ability
+	/// Min number of aberrations caught by atrophy ability
 	/// </summary>
 	[Range(0, 10)]
 	[DefaultValue(1)]
@@ -313,12 +313,12 @@ public class Config
 	/// <summary>
 	/// Fishing spots
 	/// </summary>
-	[DefaultValue(Spots.Vanilla)]
+	[DefaultValue("vanilla")]
 	public Spots fishingSpots = Spots.Vanilla;
 
 	/// <summary>
 	/// Dredge spots
 	/// </summary>
-	[DefaultValue(Spots.Vanilla)]
+	[DefaultValue("vanilla")]
 	public Spots dredgeSpots = Spots.Vanilla;
 }

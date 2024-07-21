@@ -1,9 +1,5 @@
 using HarmonyLib;
 using System.Reflection;
-using Newtonsoft.Json;
-using Tweaks.Patches;
-using UnityEngine;
-using Winch.Config;
 using Winch.Core;
 
 namespace Tweaks
@@ -15,7 +11,7 @@ namespace Tweaks
 		public static void Initialize()
 		{
 			new Harmony("megapiggy.tweaks").PatchAll(Assembly.GetExecutingAssembly());
-			Config = Util.GetJSON<Config>("Config.json");
+			Config = Util.GetJSON<Config>("config");
 			//Config.boatSpeedMult.SettingChanged += Boat_Patch.BoatMoveSpeed_SettingChanged;
 			//Config.boatTurnMult.SettingChanged += Boat_Patch.BoatTurnSpeed_SettingChanged;
 			//Config.boatTurnsOnlyWhenMoving.SettingChanged += Boat_Patch.BoatTurnSpeed_SettingChanged;
