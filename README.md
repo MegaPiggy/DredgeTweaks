@@ -4,11 +4,11 @@ Various game tweaks.
 
 Port of [qqqbbb's BepInEx mod](https://www.nexusmods.com/dredge/mods/2) to [Winch](https://dredgemods.com/mods/winch/)
 
-![Thumbnail](https://raw.githubusercontent.com/MegaPiggy/DredgeTweaks/main/Thumbnail.png)
-
 ## Changing mod settings
 You can find the config file in the same folder as the mod dll. (i.e. C:\Program Files (x86)\Steam\steamapps\common\DREDGE\Mods\megapiggy.tweaks\config.jsonc)
 To edit the mod's settings open the jsonc file with any text editor.
+
+![Thumbnail](https://raw.githubusercontent.com/MegaPiggy/DredgeTweaks/main/Thumbnail.png)
 
 ## Available settings
 
