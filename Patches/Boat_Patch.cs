@@ -1,6 +1,7 @@
 using System;
 using HarmonyLib;
 using UnityEngine;
+using Winch.Core;
 
 namespace Tweaks.Patches;
 
@@ -14,7 +15,7 @@ internal static class Boat_Patch
         {
             public static bool Prefix(Rigidbody __instance, Vector3 torque)
             {
-                Util.Log("Rigidbody AddTorque " + __instance.name);
+                WinchCore.Log.Info("Rigidbody AddTorque " + __instance.name);
                 return true;
             }
         }

@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using Winch.Core;
 
 namespace Tweaks.Patches;
 
@@ -375,7 +376,7 @@ internal static class UI_patch
 
         public static bool SellModeActionHandlerPrefix(SellModeActionHandler __instance)
         {
-            Util.Log("SellModeActionHandler constructor " + __instance.sellAllValueString);
+            WinchCore.Log.Info("SellModeActionHandler constructor " + __instance.sellAllValueString);
             __instance.sellAllValueString = "$0";
             __instance.sellAction = new DredgePlayerActionPress("prompt.sell", GameManager.Instance.Input.Controls.SellItem);
             __instance.sellAction.showInTooltip = true;
@@ -394,7 +395,7 @@ internal static class UI_patch
             sellAllAction.OnPressComplete = (Action)Delegate.Combine(sellAllAction.OnPressComplete, new Action(__instance.OnSellAllPressed));
             __instance.sellAllAction.priority = 5;
             GameEvents.Instance.OnItemRemovedFromCursor += __instance.OnItemRemovedFromCursor;
-            Util.Log("SellModeActionHandler constructor 1 " + __instance.sellAllValueString);
+            WinchCore.Log.Info("SellModeActionHandler constructor 1 " + __instance.sellAllValueString);
             return false;
         }
     }

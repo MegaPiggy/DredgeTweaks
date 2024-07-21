@@ -152,7 +152,7 @@ internal static class HarvestPatch
             }
             if (Main.Config.fishingSpotDisableChance > 0f)
             {
-                __instance.gameObject.EnsureComponent<HarvestPOIdisabler>();
+                __instance.gameObject.GetOrAddComponent<HarvestPOIdisabler>();
                 return;
             }
             HarvestPOIdisabler component = __instance.GetComponent<HarvestPOIdisabler>();
