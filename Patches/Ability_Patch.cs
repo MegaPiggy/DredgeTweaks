@@ -60,7 +60,7 @@ internal static class Ability_Patch
 
     private static BoostAbility boostAbility;
 
-    public static void BoostCooldownMult_SettingChanged(object sender, EventArgs e)
+    public static void BoostCooldownMult_SettingChanged()
     {
         if (boostAbility != null)
 		{

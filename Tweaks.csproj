@@ -11,23 +11,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="mod_meta.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+	<None Include="mod_meta.json">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Include="default_config.json">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
     <None Include="Assets\**\*.*">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="config.jsonc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Tweaks.csproj.user" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DredgeGameLibs" Version="1.4.2" />
-    <PackageReference Include="HarmonyX" Version="2.10.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Winch" Version="0.4.0" />
+    <PackageReference Include="Winch" Version="0.5.0" />
   </ItemGroup>
 
 </Project>

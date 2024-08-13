@@ -1,0 +1,401 @@
+{
+	"boat": {
+		"type": "separator",
+		"title": "tweaks.boat"
+	},
+	"boatTurnsOnlyWhenMoving": {
+		"type": "toggle",
+		"title": "tweaks.boatTurnsOnlyWhenMoving.title",
+		"tooltip": "tweaks.boatTurnsOnlyWhenMoving.tooltip",
+		"value": false
+	},
+	"boatSpeedMult": {
+		"type": "slider",
+		"title": "tweaks.boatSpeedMult.title",
+		"tooltip": "tweaks.boatSpeedMult.tooltip",
+		"min": 0.5,
+		"max": 5,
+		"value": 1
+	},
+	"boatTurnMult": {
+		"type": "slider",
+		"title": "tweaks.boatTurnMult.title",
+		"tooltip": "tweaks.boatTurnMult.tooltip",
+		"min": 0.5,
+		"max": 5,
+		"value": 1
+	},
+	"showBoostGauge": {
+		"type": "toggle",
+		"title": "tweaks.showBoostGauge.title",
+		"tooltip": "tweaks.showBoostGauge.tooltip",
+		"value": false
+	},
+	"boostCooldownMult": {
+		"type": "slider",
+		"title": "tweaks.boostCooldownMult.title",
+		"tooltip": "tweaks.boostCooldownMult.tooltip",
+		"min": 0.1,
+		"max": 10,
+		"value": 1
+	},
+	"boostSpeedMult": {
+		"type": "slider",
+		"title": "tweaks.boostSpeedMult.title",
+		"tooltip": "tweaks.boostSpeedMult.tooltip",
+		"min": 1,
+		"max": 5,
+		"value": 1
+	},
+	"safeCollisionMagnitudeThreshold": {
+		"type": "slider",
+		"title": "tweaks.safeCollisionMagnitudeThreshold.title",
+		"tooltip": "tweaks.safeCollisionMagnitudeThreshold.tooltip",
+		"min": 0,
+		"max": 10,
+		"value": 0
+	},
+	"cargoBoatMassMult": {
+		"type": "slider",
+		"title": "tweaks.cargoBoatMassMult.title",
+		"tooltip": "tweaks.cargoBoatMassMult.tooltip",
+		"min": 0,
+		"max": 1,
+		"value": 0
+	},
+	"netBoatMassMult": {
+		"type": "slider",
+		"title": "tweaks.netBoatMassMult.title",
+		"tooltip": "tweaks.netBoatMassMult.tooltip",
+		"min": 0,
+		"max": 1,
+		"value": 0
+	},
+
+	"crabPot": {
+		"type": "separator",
+		"title": "tweaks.crabPot"
+	},
+	"crabPotCatchRateMult": {
+		"type": "slider",
+		"title": "tweaks.crabPotCatchRateMult.title",
+		"tooltip": "tweaks.crabPotCatchRateMult.tooltip",
+		"min": 0.01,
+		"max": 3,
+		"value": 1
+	},
+	"crabPotCatchChance": {
+		"type": "slider",
+		"title": "tweaks.crabPotCatchChance.title",
+		"tooltip": "tweaks.crabPotCatchChance.tooltip",
+		"min": 0,
+		"max": 1,
+		"value": 1
+	},
+	"crabPotDurabilityMultiplier": {
+		"type": "slider",
+		"title": "tweaks.crabPotDurabilityMultiplier.title",
+		"tooltip": "tweaks.crabPotDurabilityMultiplier.tooltip",
+		"min": 0.1,
+		"max": 10,
+		"value": 1
+	},
+
+
+	"dredging": {
+		"type": "separator",
+		"title": "tweaks.dredging"
+	},
+	"chanceToCatchResearchPart": {
+		"type": "slider",
+		"title": "tweaks.chanceToCatchResearchPart.title",
+		"tooltip": "tweaks.chanceToCatchResearchPart.tooltip",
+		"min": 0,
+		"max": 1,
+		"value": 0.07
+	},
+	"dredgeSpots": {
+		"type": "dropdown",
+		"title": "tweaks.dredgeSpots.title",
+		"tooltip": "tweaks.dredgeSpots.tooltip",
+		"optionStrings": [
+			"tweaks.spots.vanilla",
+			"tweaks.spots.neverDeplete",
+			"tweaks.spots.neverRestock"
+		],
+		"options": [
+			"vanilla",
+			"neverDeplete",
+			"neverRestock"
+		],
+		"value": "vanilla"
+	},
+	"randomizeDredgeStock": {
+		"type": "toggle",
+		"title": "tweaks.randomizeDredgeStock.title",
+		"tooltip": "tweaks.randomizeDredgeStock.tooltip",
+		"value": false
+	},
+
+
+	"fishing": {
+		"type": "separator",
+		"title": "tweaks.fishing"
+	},
+	"daytimeAberrationChance": {
+		"type": "slider",
+		"title": "tweaks.daytimeAberrationChance.title",
+		"tooltip": "tweaks.daytimeAberrationChance.tooltip",
+		"min": 0,
+		"max": 1,
+		"value": 0.01
+	},
+	"nighttimeAberrationChance": {
+		"type": "slider",
+		"title": "tweaks.nighttimeAberrationChance.title",
+		"tooltip": "tweaks.nighttimeAberrationChance.tooltip",
+		"min": 0,
+		"max": 1,
+		"value": 0.03
+	},
+	"fishingSpotDisableChance": {
+		"type": "slider",
+		"title": "tweaks.fishingSpotDisableChance.title",
+		"tooltip": "tweaks.fishingSpotDisableChance.tooltip",
+		"min": 0,
+		"max": 1,
+		"value": 0
+	},
+	"fishingSpots": {
+		"type": "dropdown",
+		"title": "tweaks.fishingSpots.title",
+		"tooltip": "tweaks.fishingSpots.tooltip",
+		"optionStrings": [
+			"tweaks.spots.vanilla",
+			"tweaks.spots.neverDeplete",
+			"tweaks.spots.neverRestock"
+		],
+		"options": [
+			"vanilla",
+			"neverDeplete",
+			"neverRestock"
+		],
+		"value": "vanilla"
+	},
+	"fishDecays": {
+		"type": "toggle",
+		"title": "tweaks.fishDecays.title",
+		"tooltip": "tweaks.fishDecays.tooltip",
+		"value": true
+	},
+	"showMinigameAnimationFeedback": {
+		"type": "toggle",
+		"title": "tweaks.showMinigameAnimationFeedback.title",
+		"tooltip": "tweaks.showMinigameAnimationFeedback.tooltip",
+		"value": true
+	},
+	"showFishSpotInfo": {
+		"type": "toggle",
+		"title": "tweaks.showFishSpotInfo.title",
+		"tooltip": "tweaks.showFishSpotInfo.tooltip",
+		"value": true
+	},
+	"aberrationCatchBonusCap": {
+		"type": "slider",
+		"title": "tweaks.aberrationCatchBonusCap.title",
+		"tooltip": "tweaks.aberrationCatchBonusCap.tooltip",
+		"min": 0,
+		"max": 1,
+		"value": 0.35
+	},
+	"aberrationParticleFXonFishingSpot": {
+		"type": "toggle",
+		"title": "tweaks.aberrationParticleFXonFishingSpot.title",
+		"tooltip": "tweaks.aberrationParticleFXonFishingSpot.tooltip",
+		"value": true
+	},
+	"specialFishingSpots": {
+		"type": "toggle",
+		"title": "tweaks.specialFishingSpots.title",
+		"tooltip": "tweaks.specialFishingSpots.tooltip",
+		"value": true
+	},
+	"minAtrophyAberrations": {
+		"type": "slider",
+		"title": "tweaks.minAtrophyAberrations.title",
+		"tooltip": "tweaks.minAtrophyAberrations.tooltip",
+		"min": 0,
+		"max": 10,
+		"value": 1
+	},
+	"waterRipplesOnFishingSpot": {
+		"type": "toggle",
+		"title": "tweaks.waterRipplesOnFishingSpot.title",
+		"tooltip": "tweaks.waterRipplesOnFishingSpot.tooltip",
+		"value": true
+	},
+	"randomizeFishStock": {
+		"type": "toggle",
+		"title": "tweaks.randomizeFishStock.title",
+		"tooltip": "tweaks.randomizeFishStock.tooltip",
+		"value": false
+	},
+
+
+	"misc": {
+		"type": "separator",
+		"title": "tweaks.misc"
+	},
+	"cameraFOV": {
+		"type": "slider",
+		"title": "tweaks.cameraFOV.title",
+		"tooltip": "tweaks.cameraFOV.tooltip",
+		"min": 20,
+		"max": 80,
+		"value": 40
+	},
+	"dayLengthMult": {
+		"type": "slider",
+		"title": "tweaks.dayLengthMult.title",
+		"tooltip": "tweaks.dayLengthMult.tooltip",
+		"min": 0.1,
+		"max": 10,
+		"value": 1
+	},
+	"controllerRumble": {
+		"type": "toggle",
+		"title": "tweaks.controllerRumble.title",
+		"tooltip": "tweaks.controllerRumble.tooltip",
+		"value": true
+	},
+	"showPOIicon": {
+		"type": "toggle",
+		"title": "tweaks.showPOIicon.title",
+		"tooltip": "tweaks.showPOIicon.tooltip",
+		"value": true
+	},
+	"showPlayerMarkerOnMap": {
+		"type": "toggle",
+		"title": "tweaks.showPlayerMarkerOnMap.title",
+		"tooltip": "tweaks.showPlayerMarkerOnMap.tooltip",
+		"value": true
+	},
+	"showOrangeParticlesOnPOI": {
+		"type": "toggle",
+		"title": "tweaks.showOrangeParticlesOnPOI.title",
+		"tooltip": "tweaks.showOrangeParticlesOnPOI.tooltip",
+		"value": true
+	},
+	"showPOIglint": {
+		"type": "toggle",
+		"title": "tweaks.showPOIglint.title",
+		"tooltip": "tweaks.showPOIglint.tooltip",
+		"value": true
+	},
+	"spyGlassShowsFishingSpots": {
+		"type": "toggle",
+		"title": "tweaks.spyGlassShowsFishingSpots.title",
+		"tooltip": "tweaks.spyGlassShowsFishingSpots.tooltip",
+		"value": true
+	},
+	"showRelicParticles": {
+		"type": "toggle",
+		"title": "tweaks.showRelicParticles.title",
+		"tooltip": "tweaks.showRelicParticles.tooltip",
+		"value": true
+	},
+	"noAbilityCooldown": {
+		"type": "toggle",
+		"title": "tweaks.noAbilityCooldown.title",
+		"tooltip": "tweaks.noAbilityCooldown.tooltip",
+		"value": false
+	},
+	"onlyActivateBoostWhenMoving": {
+		"type": "toggle",
+		"title": "tweaks.onlyActivateBoostWhenMoving.title",
+		"tooltip": "tweaks.onlyActivateBoostWhenMoving.tooltip",
+		"value": true
+	},
+	"sellExtraItems": {
+		"type": "toggle",
+		"title": "tweaks.sellExtraItems.title",
+		"tooltip": "tweaks.sellExtraItems.tooltip",
+		"value": true
+	},
+	"buyLockedLights": {
+		"type": "toggle",
+		"title": "tweaks.buyLockedLights.title",
+		"tooltip": "tweaks.buyLockedLights.tooltip",
+		"value": true
+	},
+
+
+	"sanity": {
+		"type": "separator",
+		"title": "tweaks.sanity"
+	},
+	"sanityMultiplier": {
+		"type": "slider",
+		"title": "tweaks.sanityMultiplier.title",
+		"tooltip": "tweaks.sanityMultiplier.tooltip",
+		"min": 0.1,
+		"max": 10,
+		"value": 1
+	},
+	"sanityAberrationCatchBonus": {
+		"type": "slider",
+		"title": "tweaks.sanityAberrationCatchBonus.title",
+		"tooltip": "tweaks.sanityAberrationCatchBonus.tooltip",
+		"min": 0,
+		"max": 1,
+		"value": 0
+	},
+
+
+	"trawlNet": {
+		"type": "separator",
+		"title": "tweaks.trawlNet"
+	},
+	"showNetCatchCount": {
+		"type": "toggle",
+		"title": "tweaks.showNetCatchCount.title",
+		"tooltip": "tweaks.showNetCatchCount.tooltip",
+		"value": true
+	},
+	"netCatchSound": {
+		"type": "toggle",
+		"title": "tweaks.netCatchSound.title",
+		"tooltip": "tweaks.netCatchSound.tooltip",
+		"value": true
+	},
+	"netCatchRateMult": {
+		"type": "slider",
+		"title": "tweaks.netCatchRateMult.title",
+		"tooltip": "tweaks.netCatchRateMult.tooltip",
+		"min": 0,
+		"max": 10,
+		"value": 1
+	},
+	"netCatchMaterialChance": {
+		"type": "slider",
+		"title": "tweaks.netCatchMaterialChance.title",
+		"tooltip": "tweaks.netCatchMaterialChance.tooltip",
+		"min": 0,
+		"max": 1,
+		"value": 0
+	},
+	"netCatchChance": {
+		"type": "slider",
+		"title": "tweaks.netCatchChance.title",
+		"tooltip": "tweaks.netCatchChance.tooltip",
+		"min": 0,
+		"max": 1,
+		"value": 1
+	},
+	"netBreaks": {
+		"type": "toggle",
+		"title": "tweaks.netBreaks.title",
+		"tooltip": "tweaks.netBreaks.tooltip",
+		"value": true
+	}
+}

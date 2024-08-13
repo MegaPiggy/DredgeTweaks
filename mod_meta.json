@@ -6,5 +6,6 @@
 	"ModAssembly": "Tweaks.dll",
 	"MinWinchVersion": "0.4.0",
 	"Entrypoint": "Tweaks.Main/Initialize",
+	"Preload": "Tweaks.Main/Preload",
 	"Dependencies": [ "hacktix.introskipper" ]
 }
