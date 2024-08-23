@@ -1,30 +1,45 @@
 using Newtonsoft.Json;
+using Sirenix.Serialization;
+using Steamworks;
 using System;
 using System.IO;
 using System.Reflection;
+using Winch.Config;
 using Winch.Core;
 
 namespace Tweaks;
 
 public static class Util
 {
-	internal static JsonSerializerSettings jsonSettings = new JsonSerializerSettings
+	public static void PrepareConfig()
 	{
-		NullValueHandling = NullValueHandling.Ignore,
-		DefaultValueHandling = DefaultValueHandling.Include,
-		Formatting = Formatting.Indented,
-	};
+		var folderpath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+		string filepath = Path.Combine(folderpath, Winch.Constants.ModConfigFileName);
+		if (!File.Exists(filepath)) // Generate file
+		{
+			try
+			{
+				JSONConfig.WriteConfig(filepath, new Config());
+			}
+			catch (Exception ex)
+			{
+				WinchCore.Log.Error(string.Format("Error on 'PrepareConfig' call. Config at '{0}' cannot be written to: {1}", filepath, ex));
+			}
+		}
+	}
 
 	public static T GetJSON<T>(string filename)
 	{
 		var folderpath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
-		string filepath = Path.Combine(folderpath, filename + ".jsonc");
+		string filepath = Path.Combine(folderpath, filename + ".json");
+		filepath = File.Exists(filepath) ? filepath : Path.Combine(folderpath, filename + ".jsonc");
 		if (File.Exists(filepath))
 		{
 			try
 			{
-				return JsonConvert.DeserializeObject<T>(File.ReadAllText(filepath));
+				return JSONConfig.ReadConfig<T>(filepath);
 			}
 			catch (Exception ex)
 			{
@@ -36,7 +51,7 @@ public static class Util
 			try
 			{
 				T instance = (T)Activator.CreateInstance(typeof(T));
-				File.WriteAllText(filepath, JsonConvert.SerializeObject(instance, typeof(T), jsonSettings));
+				JSONConfig.WriteConfig(filepath, instance, typeof(T));
 				return instance;
 			}
 			catch (Exception ex)
