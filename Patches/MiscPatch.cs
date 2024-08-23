@@ -235,15 +235,21 @@ internal static class MiscPatch
 
     private static float globalSanityModifier;
 
-    public static void CameraFOV_SettingChanged(object sender, EventArgs e)
+    public static void CameraFOV_SettingChanged()
     {
-        GameManager.Instance.PlayerCamera.defaultFOV = Main.Config.cameraFOV;
-        GameManager.Instance.PlayerCamera.cinemachineCamera.m_Lens.FieldOfView = Main.Config.cameraFOV;
+        if (GameManager.Instance != null && GameManager.Instance.PlayerCamera != null)
+        {
+            GameManager.Instance.PlayerCamera.defaultFOV = Main.Config.cameraFOV;
+            GameManager.Instance.PlayerCamera.cinemachineCamera.m_Lens.FieldOfView = Main.Config.cameraFOV;
+        }
     }
 
-	public static void SanityMult_SettingChanged(object sender, EventArgs e)
+    public static void SanityMult_SettingChanged()
     {
-        GameManager.Instance.GameConfigData.globalSanityModifier = globalSanityModifier * Main.Config.sanityMultiplier;
+        if (GameManager.Instance != null && GameManager.Instance.GameConfigData != null)
+        {
+            GameManager.Instance.GameConfigData.globalSanityModifier = globalSanityModifier * Main.Config.sanityMultiplier;
+        }
     }
 
     private static void DisableGlint(GameObject __instance)

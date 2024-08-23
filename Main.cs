@@ -1,4 +1,5 @@
 using HarmonyLib;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
@@ -9,6 +10,17 @@ namespace Tweaks
 	public static class Main
 	{
 		public static Config Config;
+
+		public static void Preload()
+		{
+			var folderpath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+			string filepath = Path.Combine(folderpath, "default_config.jsonc");
+			string newfilepath = Path.Combine(folderpath, "config.jsonc");
+			if (File.Exists(filepath) && !File.Exists(newfilepath))
+			{
+				File.Move(filepath, newfilepath);
+			}
+		}
 
 		public static void Initialize()
 		{

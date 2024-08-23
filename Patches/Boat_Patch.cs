@@ -89,7 +89,7 @@ internal static class Boat_Patch
 
     public static float baseTurnSpeed;
 
-    public static void BoatMoveSpeed_SettingChanged(object sender, EventArgs e)
+    public static void BoatMoveSpeed_SettingChanged()
     {
         if (baseMovementModifier > 0f && GameManager.Instance != null && GameManager.Instance.Player != null && GameManager.Instance.Player._controller != null)
         {
@@ -97,7 +97,7 @@ internal static class Boat_Patch
         }
     }
 
-    public static void BoatTurnSpeed_SettingChanged(object sender, EventArgs e)
+    public static void BoatTurnSpeed_SettingChanged()
     {
         if (baseTurnSpeed > 0f && GameManager.Instance != null && GameManager.Instance.Player != null && GameManager.Instance.Player._controller != null)
         {

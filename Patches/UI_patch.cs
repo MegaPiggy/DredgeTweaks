@@ -269,25 +269,20 @@ internal static class UI_patch
 
 	public static class TooltipSectionUpgradeCost_Patch
     {
-        public static bool Prefix(TooltipSectionUpgradeCost __instance, UpgradeData upgradeData)
+        public static bool Prefix(TooltipSectionUpgradeCost __instance, IUpgradeCost upgradeCost)
         {
-            SerializableGrid grid = GameManager.Instance.SaveData.GetGridByKey(upgradeData.GridConfig.gridKey);
+            SerializableGrid grid = GameManager.Instance.SaveData.GetGridByKey(upgradeCost.GetGridKey());
             __instance.isLayedOut = false;
             __instance.upgradeCostIcons.ForEach(delegate (TooltipUpgradeCostIcon icon)
             {
                 icon.gameObject.SetActive(value: false);
             });
-            upgradeData.upgradeCost.ForEach(delegate (UpgradeCost uc)
+            upgradeCost.GetItemCost().ForEach(delegate (ItemCountCondition uc)
             {
-                TooltipUpgradeCostIcon tooltipUpgradeCostIcon = __instance.upgradeCostIcons.Find((i) => i.ItemData == uc.itemData);
-                if (tooltipUpgradeCostIcon != null)
-                {
-                    tooltipUpgradeCostIcon.Init(GameManager.Instance.SaveData.GetNumItemInGridById(uc.itemData.id, grid), uc.num);
-                    tooltipUpgradeCostIcon.gameObject.SetActive(value: true);
-                }
+                UnityEngine.Object.Instantiate<GameObject>(__instance.upgradeCostIconPrefab, __instance.upgradeCostContainer).GetComponent<TooltipUpgradeCostIcon>().Init(uc.item, uc.CountItems(grid), uc.count);
             });
-            __instance.monetaryCostText.text = "$" + upgradeData.MonetaryCost.ToString("n0", LocalizationSettings.SelectedLocale.Formatter);
-            __instance.monetaryCostText.color = GameManager.Instance.SaveData.Funds >= upgradeData.MonetaryCost ? GameManager.Instance.LanguageManager.GetColor(DredgeColorTypeEnum.NEUTRAL) : GameManager.Instance.LanguageManager.GetColor(DredgeColorTypeEnum.NEGATIVE);
+            __instance.monetaryCostText.text = "$" + upgradeCost.GetMonetaryCost().ToString("n0", LocalizationSettings.SelectedLocale.Formatter);
+            __instance.monetaryCostText.color = GameManager.Instance.SaveData.Funds >= upgradeCost.GetMonetaryCost() ? GameManager.Instance.LanguageManager.GetColor(DredgeColorTypeEnum.NEUTRAL) : GameManager.Instance.LanguageManager.GetColor(DredgeColorTypeEnum.NEGATIVE);
             __instance.isLayedOut = true;
             return false;
         }

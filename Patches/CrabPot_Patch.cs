@@ -10,7 +10,7 @@ internal static class CrabPot_Patch
     public static class SerializedCrabPotPOIData_CalculateCatchRoll_Patch
     {
         [HarmonyPostfix]
-        [HarmonyPatch("Init")]
+        [HarmonyPatch("Init", new System.Type[0])]
         public static void InitPostfix(SerializedCrabPotPOIData __instance)
         {
             __instance.timeUntilNextCatchRoll *= Main.Config.crabPotCatchRateMult;

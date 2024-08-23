@@ -2,9 +2,10 @@
 	"Author": "MegaPiggy",
 	"Name": "Tweaks",
 	"ModGUID": "megapiggy.tweaks",
-	"Version": "1.4.2",
+	"Version": "1.5.1",
 	"ModAssembly": "Tweaks.dll",
 	"MinWinchVersion": "0.4.0",
 	"Entrypoint": "Tweaks.Main/Initialize",
+	"Preload": "Tweaks.Main/Preload",
 	"Dependencies": [ "hacktix.introskipper" ]
 }
