@@ -70,7 +70,8 @@ internal static class HarvestPatch
             __instance.currentPOI.OnHarvested(deductFromStock);
             GameManager.Instance.GridManager.AddItemOfTypeToCursor(spatialItemInstance, GridObjectState.BEING_HARVESTED);
             GameManager.Instance.ItemManager.SetItemSeen(spatialItemInstance);
-            GameEvents.Instance.TriggerFishCaught();
+            GameEvents.Instance.TriggerFishCaught(spatialItemInstance);
+            GameEvents.Instance.TriggerPOIHarvested(__instance.currentPOI, spatialItemInstance);
             __instance.itemDataToHarvest = null;
             return false;
         }
@@ -152,10 +153,10 @@ internal static class HarvestPatch
             }
             if (Main.Config.fishingSpotDisableChance > 0f)
             {
-                __instance.gameObject.GetOrAddComponent<HarvestPOIdisabler>();
+                __instance.gameObject.GetOrAddComponent<HarvestPOIDisabler>();
                 return;
             }
-            HarvestPOIdisabler component = __instance.GetComponent<HarvestPOIdisabler>();
+            HarvestPOIDisabler component = __instance.GetComponent<HarvestPOIDisabler>();
             if (component != null)
             {
                 Object.Destroy(component);

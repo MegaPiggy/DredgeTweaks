@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Tweaks;
 
-public class HarvestPOIdisabler : MonoBehaviour
+public class HarvestPOIDisabler : MonoBehaviour
 {
 	public int checkDay = -1;
 
